@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sayu ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: linear-gradient(#ffb6c1, #ffe6f2);
+            font-family: 'Comic Sans MS';
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-top: 120px;
+            min-height: 90px;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 15px 30px;
+            margin: 20px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #yes {
+            background: red;
+            color: white;
+        }
+
+        #no {
+            background: white;
+            position: absolute;
+        }
+.cute-img {
+    width: 120px;
+    margin-top: 12px;
+    animation: pop 1.5s ease-in-out infinite alternate;
+}
+
+        .float {
+            position: fixed;
+            bottom: -40px;
+            font-size: 28px;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            from {transform: translateY(0); opacity: 1;}
+            to {transform: translateY(-120vh); opacity: 0;}
+        }
+    </style>
+
+</head>
+<body>
+<audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<h1 id="text"></h1>
+<div style="display:flex; flex-direction:column; align-items:center;">
+
+    <button id="yes" onclick="goYes()">HO RAJ 💕</button>
+
+    <img src="cute.png" alt="cute sticker" class="cute-img">
+
+</div>
+
+<button id="no" onmouseover="moveNo()">NAHI 😝</button>
+
+<script>
+    // Typing text
+    let msg = "Sayu Bacha 💖\nWill You Be My Valentine Baby?";
+    let i = 0;
+
+    function typeText() {
+        if (i < msg.length) {
+            document.getElementById("text").innerHTML +=
+                msg.charAt(i) === "\n" ? "<br>" : msg.charAt(i);
+            i++;
+            setTimeout(typeText, 80);
+        }
+    }
+    typeText();
+
+    // NO button runs away
+    function moveNo() {
+        let x = Math.random() * (window.innerWidth - 100);
+        let y = Math.random() * (window.innerHeight - 100);
+        document.getElementById("no").style.left = x + "px";
+        document.getElementById("no").style.top = y + "px";
+    }
+
+    // YES → goes to YES PAGE
+    function goYes() {
+        window.location.href = "yes.html";
+    }
+
+    // Floating 😘 ✨
+    setInterval(() => {
+        let el = document.createElement("div");
+        el.className = "float";
+        el.innerHTML = Math.random() > 0.5 ? "😘" : "✨";
+        el.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 6000);
+    }, 300);
+</script>
+
+</body>
+</html>

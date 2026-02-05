@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prem Patra 💌</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#ffdde1, #ffb6c1);
+            font-family: 'Comic Sans MS';
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .envelope {
+            width: 720px;
+            height: 700px;
+            background: #ffb6c1;
+            margin: 140px auto 0;
+            position: relative;
+            border-radius: 0 0 20px 20px;
+            overflow: hidden;
+            animation: openEnv 2s ease forwards;
+        }
+
+        .flap {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #ff9ab3;
+            clip-path: polygon(0 0, 50% 60%, 100% 0);
+            transform-origin: top;
+            animation: flapOpen 2s ease forwards;
+        }
+
+        .card {
+            background: white;
+            width: 680px;
+            padding: 20px;
+            border-radius: 15px;
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%) translateY(120px);
+            box-shadow: 0 10px 25px rgba(255,105,180,0.6);
+            opacity: 0;
+            animation: cardOut 2s ease forwards;
+            animation-delay: 1.8s;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        @keyframes flapOpen {
+            to {
+                transform: rotateX(180deg);
+            }
+        }
+
+        @keyframes cardOut {
+            to {
+                transform: translateX(-50%) translateY(-100px);
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -40px;
+            font-size: 22px;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-120vh); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="envelope">
+    <div class="flap"></div>
+
+    <div class="card">
+        <h2>''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************Majhi Chakuli ❤️</h2>
+        <p>
+..............................................................................................................................................................................Majhi jaan, majha jane-jigar, majhi bayko, majhi chakuli ✨
+Itne saalon se hum saath hain aur sach bolu toh main khudko bohot lucky maanta hoon ki tu meri life mein hai, Sayu.
+
+Humne bohot kuch dekha—ladayi, gussa, misunderstandings, tough phases… par phir bhi hum ek-dusre ka haath pakad ke khade rahe. Aaj lagta hai hum sach mein ek-dusre ke liye bane hain. We are blessed ❤️
+
+Mujhe tu har roop mein pyaari lagti hai—ladte hue, gussa karte hue, pyaar karte hue, gulu-gulu karte hue 😘
+Bas ek hi baat chubhti hai… tu yahan hoti toh hum kitna zyada enjoy karte yaar. Par future mein, I promise, hum bohot saare moments, bohot saari yaadein, saath-saath banayenge 💫
+
+Tu bohot sundar hai Sayu—sirf dikhti hi nahi, dil se bhi.
+Meri bas ek hi wish hai—tu hamesha aisi hi rahe, aise hi pyaar karti rahe, aur hum dono milke zindagi full enjoy karein ❤️
+
+Sayuuuu… majhi bayko ban na 🫶
+Aur aaj ek baat dil se puchhna hai…
+
+Will you be my Valentine, baby? 💘
+
+Kabhi-kabhi mujhe lagta hai tujhe doubt hota hoga, par sach bolu toh tujhe jaisi ladki milna naseeb walon ko hota hai. Is ajeeb generation mein tu mujhe mili—main sach mein bohot lucky hoon baby.
+Main khush hoon… bohot zyada khush hoon ❤️
+
+✨🪻♥️
+            Thank you Sayu for coming into my life 💖<br><br>
+                        
+            Forever yours 💕
+        </p>
+    </div>
+</div>
+
+<script>
+    // Floating hearts
+    setInterval(() => {
+        let h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "❤️";
+        h.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 6000);
+    }, 450);
+</script>
+
+</body>
+</html>

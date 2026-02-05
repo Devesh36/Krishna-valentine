@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chakuli Quiz 💖</title>
+    <style>
+        body {
+            background: linear-gradient(#ffdde1, #ee9ca7);
+            font-family: 'Comic Sans MS';
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: white;
+            width: 320px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255,105,180,0.6);
+            animation: pop 1s ease;
+        }
+
+        @keyframes pop {
+            from {transform: scale(0); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 12px 0;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            background: #ff69b4;
+            color: white;
+        }
+
+        button:hover {
+            background: #ff1493;
+        }
+    </style>
+
+</head>
+<body>
+<audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="box" id="quizBox">
+    <h1 id="question">Loading...</h1>
+    <button onclick="answer(1)">Option 1</button>
+    <button onclick="answer(2)">Option 2</button>
+</div>
+
+<script>
+    let q = 0;
+    let score = 0;
+
+    const quiz = [
+        {
+            q: "Mala tujya madhe sarvat jast kay vadta? 😶",
+            a1: "tujhe dole 🤗",
+            a2: "tujhe hairs🙄",
+            correct: 1
+        },
+        {
+            q: "Majhi favourite dish konti ahe? ❤️",
+            a1: " SAYUUU 😘",
+            a2: "BIRYANI ? 😂",
+            correct: 1
+        },
+        {
+            q: "Mi tuzya sathi kay aahe? 🥹",
+            a1: "NAVRA 💍",
+            a2: " BABY 😝",
+            correct: 1
+        }
+    ];
+
+    function loadQ() {
+        document.getElementById("question").innerText = quiz[q].q;
+        document.querySelectorAll("button")[0].innerText = quiz[q].a1;
+        document.querySelectorAll("button")[1].innerText = quiz[q].a2;
+    }
+
+    function answer(n) {
+        if (n === quiz[q].correct) score++;
+        q++;
+
+        if (q < quiz.length) {
+            loadQ();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        let msg = "";
+        if (score === 3) {
+            msg = "💍 CONGRATULATIONS NOW PRESS BACK BUTTON AND CONTINUE 💍<br><br>Tu majhi chakuli ahes ga babbyyy ❤️<br>Forever & Always Only Be Mine 😘 ";
+        } else {
+            msg = "🥰 HUH Majhi Cutu bayko 💖";
+        }
+
+        document.getElementById("quizBox").innerHTML =
+            `<h1>${msg}</h1><p>Score: ${score}/3 💯</p>`;
+    }
+
+    loadQ();
+</script>
+
+</body>
+</html>
